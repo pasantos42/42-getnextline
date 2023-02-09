@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pasantos <pasantos <pasantos@student.42lis +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/09 12:46:38 by pasantos          #+#    #+#             */
+/*   Updated: 2023/02/09 12:46:38 by pasantos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#ifndef BUFFER_SIZE
-#define BUFFER_SIZE 42
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-#include <fcntl.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
 
-char	*get_next_line (int fd);
+char	*get_next_line(int fd);
 int		ft_strlen(char *str);
-int		find (char c, char *buf);
-void	clean (char *buf);
+int		find(char c, char *buf);
+void	clean(char *buf);
 char	*ft_strjoin(char *text, char *buf);
 
 #endif

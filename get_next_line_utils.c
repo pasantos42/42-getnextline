@@ -51,28 +51,27 @@ void	clean(char *buf)
 
 char	*ft_strjoin(char *line, char *buf)
 {
-	char	*nw_line;
+	char	*tmp;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	nw_line = malloc((ft_strlen(line) + ft_strlen(buf) + 1) * sizeof(char));
-	if (!nw_line)
+	tmp = malloc((ft_strlen(line) + ft_strlen(buf) + 1) * sizeof(char));
+	if (!tmp)
 		return (0);
-	if (line)
-		while (line[i])
-		{
-			nw_line[i] = line[i];
-			i++;
-		}
+	while (line && line[i])
+	{
+		tmp[i] = line[i];
+		i++;
+	}
 	while (buf[j])
 	{
-		nw_line[i] = buf[j++];
-		if (nw_line[i++] == '\n')
+		tmp[i] = buf[j++];
+		if (tmp[i++] == '\n')
 			break ;
 	}
-	nw_line[i] = '\0';
+	tmp[i] = '\0';
 	free(line);
-	return (nw_line);
+	return (tmp);
 }

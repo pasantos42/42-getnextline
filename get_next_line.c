@@ -14,7 +14,7 @@
 
 char	*get_next_line(int fd)
 {
-	static char	buf[FOPEN_MAX][BUFFER_SIZE + 1];
+	static char	buf[FOPEN_MAX][BUFFER_SIZE];
 	char		*line;
 
 	line = NULL;
@@ -22,6 +22,7 @@ char	*get_next_line(int fd)
 		return (0);
 	while (buf[fd][0] || read(fd, buf[fd], BUFFER_SIZE) > 0)
 	{
+		if ()
 		line = ft_strjoin(line, buf[fd]);
 		clean(buf[fd]);
 		if (find('\n', line))
@@ -30,7 +31,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
 	int		fd;
 	char	*result;
@@ -43,4 +44,4 @@ char	*get_next_line(int fd)
 		free(result);
 	}
 	close(fd);
-}*/
+} */
