@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
@@ -29,7 +29,7 @@ char	*get_next_line(int fd)
 		if (read(fd, buf[fd], 0) < 0)
 		{
 			free (line);
-			return (0);
+			return (NULL);
 		}
 	}
 	return (line);
